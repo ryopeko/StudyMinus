@@ -15,6 +15,8 @@ gem 'bcrypt'
 
 gem 'kaminari'
 
+gem 'omniauth-twitter'
+
 group :development do
   gem 'spring'
   gem 'better_errors'
