@@ -11,28 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140729134333) do
+ActiveRecord::Schema.define(version: 20140801171423) do
 
   create_table "activities", force: true do |t|
-    t.integer  "user_id"
-    t.integer  "activity_type"
-    t.text     "description"
+    t.integer  "user_id",       null: false
+    t.integer  "activity_type", null: false
+    t.text     "description",   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "activity_types", force: true do |t|
-    t.integer  "activity_id"
-    t.string   "name"
+    t.integer  "activity_id", null: false
+    t.string   "name",        null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
-    t.string   "name"
-    t.string   "email"
+    t.string   "name",                    null: false
+    t.string   "email",                   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "uid",        default: "", null: false
+    t.string   "provider",   default: "", null: false
   end
 
 end
