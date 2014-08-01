@@ -28,7 +28,7 @@ module StudyMinus
     # config.i18n.default_locale = :de
     #
     Rails.application.config.middleware.use OmniAuth::Builder do
-      provider :twitter, ENV["TWITTER_KEY"], ENV["TWITTER_SECRET"]
+      provider :twitter, Rails.application.secrets.twitter_key, Rails.application.secrets.twitter_secret
     end
   end
 end
