@@ -7,4 +7,6 @@
 /tmp
 config/secrets.yml
 
+.rspec
+
 *~
