@@ -13,6 +13,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'settingslogic'
 gem 'bcrypt'
 
+gem 'bootstrap-sass'
 gem 'kaminari'
 
 gem 'omniauth-twitter'
