@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
-  skip_before_action :authorize
-  before_action :redirect_if_signed_in, expect: :destroy
+  skip_before_action :authorize, only: [:new, :create]
+  before_action :redirect_if_signed_in, only: [:new, :create]
 
   def new
   end

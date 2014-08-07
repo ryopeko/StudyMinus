@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'users/dashboard'
 
-  resources :sessions, only: [:new, :create, :destory]
+  resources :sessions, only: [:new, :create, :destroy]
   resources :users, only: [:edit, :update]
 
   get '/dashboard', to: 'users#dashboard', as: 'dashboard'
