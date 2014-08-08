@@ -47,7 +47,7 @@ RSpec.describe SessionsController, :type => :controller do
       before do
         test_signin(@user)
 
-        delete :destroy
+        delete :destroy, { id: @user.id }
       end
 
       it { expect(response).to be_success }
@@ -57,7 +57,7 @@ RSpec.describe SessionsController, :type => :controller do
       before do
         test_signout
 
-        delete :destroy
+        delete :destroy, {id: 1}
       end
 
       it { expect(response).to redirect_to(signin_path) }
