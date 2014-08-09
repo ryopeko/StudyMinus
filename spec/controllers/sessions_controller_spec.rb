@@ -39,6 +39,15 @@ RSpec.describe SessionsController, :type => :controller do
     end
 
     context 'signed out' do
+      before do
+        test_signout
+        request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:twitter]
+
+        get :create
+      end
+
+      it { expect(response).to redirect_to(dashboard_path) }
+      it { expect(session[:user_id]).not_to be_nil }
     end
   end
 

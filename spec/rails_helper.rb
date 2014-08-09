@@ -15,6 +15,15 @@ RSpec.configure do |config|
 
   config.infer_spec_type_from_file_location!
 
+
+  OmniAuth.config.mock_auth[:twitter] = OmniAuth::AuthHash.new({
+    provider: 'twitter',
+    uid: '123545',
+    info: {
+      nickname: 'nickname'
+    }
+  })
+
   def test_signin(user)
     controller.signin(user)
   end
