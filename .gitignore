@@ -8,5 +8,6 @@
 config/secrets.yml
 
 .rspec
+coverage
 
 *~

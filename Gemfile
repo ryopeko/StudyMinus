@@ -36,5 +36,6 @@ group :development, :test do
   gem 'pry-rails'
   gem 'tapp-awesome_print'
   gem 'database_rewinder', git: 'git@github.com:amatsuda/database_rewinder'
+  gem 'simplecov', group: :test
 end
 
