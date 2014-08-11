@@ -17,6 +17,13 @@ RSpec.configure do |config|
 
   config.infer_spec_type_from_file_location!
 
+  config.before :suite do
+    DatabaseRewinder.clean_all
+  end
+
+  config.after :each do
+    DatabaseRewinder.clean
+  end
 
   OmniAuth.config.mock_auth[:twitter] = OmniAuth::AuthHash.new({
     provider: 'twitter',
