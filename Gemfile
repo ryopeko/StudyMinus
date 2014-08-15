@@ -18,6 +18,8 @@ gem 'kaminari'
 
 gem 'omniauth-twitter'
 
+gem 'simple_form', github: 'plataformatec/simple_form'
+
 group :development do
   gem 'spring'
   gem 'better_errors'

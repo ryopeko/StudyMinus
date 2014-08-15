@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/plataformatec/simple_form.git
+  revision: c3bc4af79df2f3f51500a38d8a84aa682f9ad009
+  specs:
+    simple_form (3.1.0.rc2)
+      actionpack (~> 4.0)
+      activemodel (~> 4.0)
+
+GIT
   remote: git@github.com:amatsuda/database_rewinder
   revision: 256fdb2b63762f041cb76e8630fb164d4b67ec14
   specs:
@@ -214,6 +222,7 @@ DEPENDENCIES
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   settingslogic
+  simple_form!
   simplecov
   spring
   sqlite3
