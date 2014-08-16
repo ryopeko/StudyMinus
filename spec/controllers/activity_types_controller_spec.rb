@@ -65,4 +65,41 @@ RSpec.describe ActivityTypesController, :type => :controller do
       it { expect(response).to redirect_to(signin_path) }
     end
   end
+
+  describe 'GET show' do
+    context 'signed in' do
+      before do
+        test_signin(@user)
+        @activity_type = create(:activity_type)
+      end
+
+      context 'when params has a activity type id' do
+        before do
+          get :show, id: @activity_type.id
+        end
+
+        let(:assigned_activity_type) { assigns(:activity_type) }
+
+        it { expect(assigned_activity_type).to be_a ActivityType }
+        it { expect(assigned_activity_type.id).to eq @activity_type.id }
+      end
+
+      context 'when specify id does not exist' do
+        before do
+
+        end
+
+        it {
+          bypass_rescue
+          expect(get :show, id: 1234567).to raise_error(ActiveRecord::RecordNotFound)
+        }
+      end
+    end
+
+    context 'signed out' do
+      before do
+        test_signout
+      end
+    end
+  end
 end
