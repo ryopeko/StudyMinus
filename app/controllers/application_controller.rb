@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
+  rescue_from ActiveRecord::RecordNotFound, with: :not_found
+
   before_action :authorize
 
   def authorize
@@ -25,5 +27,11 @@ class ApplicationController < ActionController::Base
 
   def signed_in?
     !current_user.nil?
+  end
+
+  private
+
+  def not_found
+    render file: Rails.root.join('public/404.html'), status: :not_found
   end
 end

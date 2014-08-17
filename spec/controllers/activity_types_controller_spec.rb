@@ -86,13 +86,11 @@ RSpec.describe ActivityTypesController, :type => :controller do
 
       context 'when specify id does not exist' do
         before do
+          get :show, id: 1234567
 
         end
 
-        it {
-          bypass_rescue
-          expect(get :show, id: 1234567).to raise_error(ActiveRecord::RecordNotFound)
-        }
+        it { expect(response).to have_http_status(:not_found) }
       end
     end
 
