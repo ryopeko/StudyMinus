@@ -1,4 +1,11 @@
 
-<h3>Activity Type</h3>
-
 <p><%= @activity_type.name %></p>
+
+<%= simple_form_for @activity , html: { class: 'form-horizontal', role: 'form'}, wrapper: :horizontal_form do |f| %>
+  <%= f.input :description %>
+  <div class="form-group">
+    <div class="col-sm-offset-3 col-sm-9">
+      <%= f.button :submit, class: 'btn-primary', value: 'Create New Activity Type' %>
+    </div>
+  </div>
+<% end %>
