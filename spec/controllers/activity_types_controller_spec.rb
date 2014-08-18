@@ -79,9 +79,13 @@ RSpec.describe ActivityTypesController, :type => :controller do
         end
 
         let(:assigned_activity_type) { assigns(:activity_type) }
+        let(:assigned_activity) { assigns(:activity) }
 
         it { expect(assigned_activity_type).to be_a ActivityType }
         it { expect(assigned_activity_type.id).to eq @activity_type.id }
+
+        it { expect(assigned_activity).to be_a Activity }
+        it { expect(assigned_activity.activity_type_id).to eq @activity_type.id }
       end
 
       context 'when specify id does not exist' do

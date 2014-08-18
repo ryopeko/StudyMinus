@@ -15,6 +15,7 @@ class ActivityTypesController < ApplicationController
 
   def show
     @activity_type = ActivityType.find(params[:id])
+    @activity = Activity.new(activity_type_id: @activity_type.id)
   end
 
   private
