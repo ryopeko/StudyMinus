@@ -20,6 +20,8 @@ gem 'omniauth-twitter'
 
 gem 'simple_form', github: 'plataformatec/simple_form'
 
+gem 'redcarpet'
+
 group :development do
   gem 'spring'
   gem 'better_errors'
