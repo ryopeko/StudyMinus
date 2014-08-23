@@ -23,4 +23,4 @@ build:
         # Add more steps here:
         - script:
             name: rake
-            code: rake spec
+            code: bundle exec rake spec
