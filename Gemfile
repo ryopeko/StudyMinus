@@ -39,7 +39,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'pry-rails'
   gem 'tapp-awesome_print'
-  gem 'database_rewinder', git: 'git@github.com:amatsuda/database_rewinder'
+  gem 'database_rewinder'
   gem 'simplecov', group: :test
 end
 
