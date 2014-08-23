@@ -22,5 +22,8 @@ build:
 
         # Add more steps here:
         - script:
-            name: rake
-            code: bundle exec rake spec
+            name: Migration
+            code: RAILS_ENV=test bundle exec rake db:migrate
+        - script:
+            name: rspec
+            code: RAILS_ENV=test bundle exec rake spec
