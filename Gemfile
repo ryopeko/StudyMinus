@@ -28,6 +28,7 @@ group :development do
   gem 'binding_of_caller'
   gem 'quiet_assets'
   gem 'hirb-unicode'
+  gem 'bullet'
 end
 
 group :development, :test do
