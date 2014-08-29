@@ -3,7 +3,7 @@
 FactoryGirl.define do
   factory :activity do
     user_id 1
-    activity_type 1
+    activity_type_id 1
     description "MyText"
   end
 end
