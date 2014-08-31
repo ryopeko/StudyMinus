@@ -22,6 +22,7 @@ RSpec.describe UsersController, :type => :controller do
 
       it { expect(response).to be_success }
       it { expect(assigns(:activities).select{|a| a.class != Activity}).to be_empty }
+      it { expect(assigns(:activities)).not_to be_empty }
       it { expect(assigns(:activities).select{|a| a.user_id != @user.id}).to be_empty }
     end
 
