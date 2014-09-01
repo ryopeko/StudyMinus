@@ -59,7 +59,7 @@ RSpec.describe SessionsController, :type => :controller do
         delete :destroy, { id: @user.id }
       end
 
-      it { expect(response).to be_success }
+      it { expect(response).to redirect_to(signin_path) }
     end
 
     context 'signed out' do
