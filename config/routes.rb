@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   get '/dashboard', to: 'users#dashboard', as: 'dashboard'
   get '/signin', to: 'sessions#new', as: 'signin'
+  delete '/signout', to: 'sessions#destroy', as: 'signout'
 
   get "/auth/:provider/callback" => "sessions#create"
 end
