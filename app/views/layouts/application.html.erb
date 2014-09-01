@@ -23,7 +23,9 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">User<span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="#">Settings</a></li>
-            <li><a href="#">Singout</a></li>
+            <% if signed_in? %>
+            <li><%= link_to 'Sign out', signout_path, method: :delete %></li>
+            <% end %>
           </ul>
         </li>
       </ul>
