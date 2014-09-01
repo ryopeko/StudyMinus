@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
 
   before_action :authorize
 
+  include SessionsHelper
+
   def authorize
     redirect_to signin_path unless signed_in?
   end
@@ -18,15 +20,6 @@ class ApplicationController < ActionController::Base
     session[:user_id] = nil
     reset_session
     @current_user = nil
-  end
-
-  def current_user
-    user_id = session[:user_id] || return
-    @current_user ||= User.find_by(id: user_id)
-  end
-
-  def signed_in?
-    !current_user.nil?
   end
 
   private
