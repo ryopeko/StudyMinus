@@ -1,2 +1,7 @@
 <h1><%= @current_user.name %></h1>
-<p>Find me in app/views/users/dashboard.html.erb</p>
+
+<ul>
+  <% @activities.each do |a| %>
+    <li><%= a.activity_type.name %></li>
+  <% end %>
+</ul>
