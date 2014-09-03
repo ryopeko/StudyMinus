@@ -37,6 +37,7 @@ group :development, :test do
   gem 'rspec-expectations', '~> 3.0.2'
   gem 'rspec-mocks',        '~> 3.0.2'
   gem 'rspec-support',      '~> 3.0.2'
+  gem 'capybara'
   gem 'factory_girl_rails'
   gem 'pry-rails'
   gem 'tapp-awesome_print'
