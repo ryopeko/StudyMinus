@@ -24,7 +24,7 @@
           <ul class="dropdown-menu" role="menu">
             <li><a href="#">Settings</a></li>
             <% if signed_in? %>
-            <li><%= link_to 'Sign out', signout_path, method: :delete %></li>
+            <li><%= link_to 'Sign out', signout_path, method: :delete, id: 'signout' %></li>
             <% end %>
           </ul>
         </li>
