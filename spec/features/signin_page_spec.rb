@@ -22,6 +22,10 @@ describe '/signin' do
     it {
       expect(current_path).to eq dashboard_path
     }
+
+    it {
+      expect(page).to have_css('a#signout')
+    }
   end
 
   context 'when signed out' do
@@ -32,6 +36,10 @@ describe '/signin' do
 
     it {
       expect(page).to have_css('a#twitter-oauth')
+    }
+
+    it {
+      expect(page).not_to have_css('a#signout')
     }
   end
 end
