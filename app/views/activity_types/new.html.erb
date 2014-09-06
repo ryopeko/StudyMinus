@@ -1,6 +1,6 @@
 <h3>New Activity Type</h3>
 
-<%= simple_form_for @activity_type, html: { class: 'form-horizontal', role: 'form'}, wrapper: :horizontal_form do |f| %>
+<%= simple_form_for @activity_type, html: { class: 'form-horizontal', role: 'form', id: 'new-activity-form' }, wrapper: :horizontal_form do |f| %>
   <%= f.input :name %>
   <div class="form-group">
     <div class="col-sm-offset-3 col-sm-9">

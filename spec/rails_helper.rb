@@ -41,4 +41,14 @@ RSpec.configure do |config|
   def test_signout
     controller.signout
   end
+
+  def signin(user)
+    visit signin_path
+
+    find('a#twitter-oauth').click
+  end
+
+  def signout
+    page.reset!
+  end
 end

@@ -1,16 +1,5 @@
 require 'rails_helper'
 
-def signin(user)
-  visit signin_path
-
-  find('a#twitter-oauth').click
-end
-
-def signout
-  page.reset!
-end
-
-
 describe '/signin' do
   subject(:user) { create :user }
 
