@@ -38,6 +38,8 @@ group :development, :test do
   gem 'rspec-mocks',        '~> 3.0.2'
   gem 'rspec-support',      '~> 3.0.2'
   gem 'capybara'
+  gem 'capybara-webkit'
+  gem 'turnip'
   gem 'factory_girl_rails'
   gem 'pry-rails'
   gem 'tapp-awesome_print'
