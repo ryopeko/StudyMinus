@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
   def dashboard
+    @activity = Activity.new
     @activities = Activity.where(user_id: current_user.id)
+    #FIXME
+    @activity_types = ActivityType.all
   end
 
   def edit

@@ -1,5 +1,19 @@
 <h1><%= @current_user.name %></h1>
 
+<h3>ActivityTypes</h3>
+<ul>
+  <% @activity_types.each do |a| %>
+  <li>
+    <%= form_for @activity do |f| %>
+      <%= f.hidden_field :activity_type_id %>
+      <%= f.label a.name %>
+      <%= f.submit 'Stamp!', class: "btn btn-primary" %>
+    <% end %>
+  </li>
+  <% end %>
+</ul>
+
+<h3>Activities</h3>
 <ul>
   <% @activities.each do |a| %>
     <li><%= a.activity_type.name %></li>
