@@ -27,3 +27,9 @@ build:
         - script:
             name: rspec
             code: RAILS_ENV=test bundle exec rake spec
+
+    after-steps:
+        - sherzberg/slack-notify:
+            subdomain: $SLACK_SUBDOMAIN
+            token: $SLACK_TOKEN
+            channel: general
