@@ -5,7 +5,7 @@
   <% @activity_types.each do |a| %>
   <li>
     <%= form_for @activity do |f| %>
-      <%= f.hidden_field :activity_type_id %>
+      <%= f.hidden_field :activity_type_id, value: a.id %>
       <%= f.label a.name %>
       <%= f.submit 'Stamp!', class: "btn btn-primary" %>
     <% end %>
