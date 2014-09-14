@@ -27,8 +27,6 @@ build:
         - script:
             name: rspec
             code: RAILS_ENV=test bundle exec rake spec
-        - domudall/slack-notify@0.0.8
-
     after-steps:
         - sherzberg/slack-notify:
             subdomain: $SLACK_SUBDOMAIN
