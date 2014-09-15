@@ -32,11 +32,7 @@ build:
         - script:
             name: define fatal
             code: |
-              function fail() {
-                _message "failed: ${1}" $ERROR_COLOR
-                  echo "${1}" > "$WERCKER_REPORT_MESSAGE_FILE"
-                  exit 1
-              }
+              function fatal() { print "$@" ; exit 1 ; }
         - sherzberg/slack-notify:
             subdomain: $SLACK_SUBDOMAIN
             token: $SLACK_TOKEN
