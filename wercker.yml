@@ -30,7 +30,7 @@ build:
 
 
     after-steps:
-        - dannyrscott/slack-notify@1.1.2
+        - dannyrscott/slack-notify@1.1.2:
             subdomain: $WERCKER_SLACK_NOTIFY_SUBDOMAIN
             token: $WERCKER_SLACK_NOTIFY_TOKEN
             channel: $WERCKER_SLACK_NOTIFY_CHANNEL
