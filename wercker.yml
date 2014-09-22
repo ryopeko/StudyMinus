@@ -28,12 +28,12 @@ build:
             name: rspec
             code: RAILS_ENV=test bundle exec rake spec
 
+        - dannyrscott/slack-notify@1.1.2
+
     after-steps:
-        - script:
-            name: define fatal
-            code: |
-              function fatal() { print "$@" ; exit 1 ; }
-        - sherzberg/slack-notify:
-            subdomain: $SLACK_SUBDOMAIN
-            token: $SLACK_TOKEN
-            channel: general
+        - slack-notify:
+            subdomain: $WERCKER_SLACK_NOTIFY_SUBDOMAIN
+            token: $WERCKER_SLACK_NOTIFY_TOKEN
+            channel: $WERCKER_SLACK_NOTIFY_CHANNEL
+
+
